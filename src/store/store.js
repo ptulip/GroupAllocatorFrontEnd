@@ -1,12 +1,12 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import * as getters from './getters'
-import * as mutations from './mutations'
+import Vue from "vue";
+import Vuex from "vuex";
+import * as getters from "./getters";
+import * as mutations from "./mutations";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 const state = {
-  productionURL: "https://organiser-app.herokuapp.com/allocateGroups",
+  productionURL: "https://icbs-group-allocator.herokuapp.com/allocateGroups",
   parsedStudents: null,
   parsedHeaders: null,
   filterId: 1,
@@ -43,7 +43,8 @@ const state = {
     {
       type: "GenderFilter",
       name: "Gender",
-      tooltip: "Adjust the gender allocation of groups, using limits or percentages.",
+      tooltip:
+        "Adjust the gender allocation of groups, using limits or percentages.",
       id: null,
       values: {},
       error: false,
@@ -52,7 +53,8 @@ const state = {
     {
       type: "MinFilter",
       name: "Minimum filter",
-      tooltip: "Choose a value and the minimum number of people per group who should have this value.",
+      tooltip:
+        "Choose a value and the minimum number of people per group who should have this value.",
       field: null,
       value: null,
       id: null,
@@ -63,7 +65,8 @@ const state = {
     {
       type: "MaxFilter",
       name: "Maximum filter",
-      tooltip: "Choose a field, and the maximum number of people per group who have an identical field value.",
+      tooltip:
+        "Choose a field, and the maximum number of people per group who have an identical field value.",
       field: null,
       id: null,
       values: {},
@@ -91,6 +94,6 @@ const store = new Vuex.Store({
   state,
   getters,
   mutations
-})
+});
 
 export default store;
